@@ -1,0 +1,20 @@
+name: Simple Static Errors Test
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print start message
+        run: echho "Starting the workflow..."
+      
+      - name: Check Python version
+        run: python3 --verison
+      
+      - name: Test API endpoint
+        run: culr -I https://api.github.com
